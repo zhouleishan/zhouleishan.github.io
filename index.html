@@ -3,20 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>周垒山的个人网站</title>
+    <title>我的个人网站</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f4; padding: 20px; }
-        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
-        img { width: 150px; border-radius: 50%; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 150px;
+            border-radius: 50%;
+        }
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #0056b3;
+            transform: scale(1.1);
+        }
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .video {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="https://via.placeholder.com/150" alt="头像">
-        <h1>你好，我是周垒山</h1>
-        <p>欢迎来到我的个人网站！</p>
-        <a href="https://github.com/yourusername">GitHub</a> | 
-        <a href="mailto:youremail@example.com">联系我</a>
+        <h1>你好，我是小明</h1>
+        <p>我是一个工业设计师，喜欢探索新技术。</p>
+
+        <button class="btn" onclick="alert('谢谢你的关注！')">关注我</button>
+        <a href="mailto:youremail@example.com" class="btn">联系我</a>
+
+        <h2>📸 我的照片</h2>
+        <div class="slider">
+            <div class="slides">
+                <img src="https://via.placeholder.com/600x300/FF5733/FFFFFF?text=图片1" alt="图片1">
+                <img src="https://via.placeholder.com/600x300/33FF57/FFFFFF?text=图片2" alt="图片2">
+                <img src="https://via.placeholder.com/600x300/3357FF/FFFFFF?text=图片3" alt="图片3">
+            </div>
+        </div>
+
+        <h2>🎥 我的介绍视频</h2>
+        <iframe class="video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+
+        <h2>🔗 关注我</h2>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a> | 
+        <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
     </div>
+
+    <script>
+        // 轮播图功能
+        let index = 0;
+        function showSlides() {
+            const slides = document.querySelector('.slides');
+            index++;
+            if (index >= 3) index = 0;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        }
+        setInterval(showSlides, 3000); // 每3秒切换图片
+    </script>
 </body>
 </html>
